@@ -1,0 +1,174 @@
+[
+  {
+    "raw": "{\"action\":\"climate_start\",\"command\":\"auto_conditioning_start\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "4fae0dbaf323d8541610a59eb545d2d5a941145704e6235ee8b134b9bf18aad6"
+  },
+  {
+    "raw": "{\"action\":\"climate_stop\",\"command\":\"auto_conditioning_stop\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "80c9d0953e6bc697bd9aede640c73e5b13028091a3d6086d0ccf1283d5eabdd2"
+  },
+  {
+    "raw": "{\"action\":\"set_temperature\",\"command\":\"set_temps\",\"payload\":\"{\\\"driver_temp\\\":21,\\\"passenger_temp\\\":21}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "3defb169f37a03bf49f8bbc89186f35e4f7a655eecb6bc3246c77e57d266d692"
+  },
+  {
+    "raw": "{\"action\":\"charge_start\",\"command\":\"charge_start\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "420b4454d32cbb2e100c77fe1f230eca722135b137d83e04dcf48fd269048add"
+  },
+  {
+    "raw": "{\"action\":\"charge_stop\",\"command\":\"charge_stop\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "530022b778ce7609f3f6ac6fdbf434bd8db25d72f3cec445e9fb79f915b9e81d"
+  },
+  {
+    "raw": "{\"action\":\"set_charge_limit\",\"command\":\"set_charge_limit\",\"payload\":\"{\\\"percent\\\":80}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "5e2560d71264ca8a255f509604eea56e95724a9cb28a3a88bb79d226bd02d931"
+  },
+  {
+    "raw": "{\"action\":\"set_charging_amps\",\"command\":\"set_charging_amps\",\"payload\":\"{\\\"charging_amps\\\":16}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "dca61295423b7d0de37e973d6ba4fa2627351cf5b4455395f4906d87412cd7a4"
+  },
+  {
+    "raw": "{\"action\":\"charge_port_open\",\"command\":\"charge_port_door_open\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "ede3c0fdbbf50b1bc653658dc8dfaec8aaecb470bfe28c109dbfa74c174fa9d6"
+  },
+  {
+    "raw": "{\"action\":\"charge_port_close\",\"command\":\"charge_port_door_close\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "c4753563de6d9e135f20ced6b9a05931b6ac6f2c657b70b73217e13f059ec1d7"
+  },
+  {
+    "raw": "{\"action\":\"navigation_send\",\"command\":\"navigation_request\",\"payload\":\"{\\\"locale\\\":\\\"en-US\\\",\\\"timestamp_ms\\\":\\\"1792108330496\\\",\\\"type\\\":\\\"share_ext_content_raw\\\",\\\"value\\\":{\\\"android.intent.ACTION\\\":\\\"android.intent.action.SEND\\\",\\\"android.intent.TEXT\\\":\\\"Synthetic destination\\\",\\\"android.intent.TYPE\\\":\\\"text/plain\\\",\\\"android.intent.extra.TEXT\\\":\\\"Synthetic destination\\\"}}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "c13414544d11185ab0a6632e20f426735b934c9398baa77e939acd96f8218eb5"
+  },
+  {
+    "raw": "{\"action\":\"lock\",\"command\":\"door_lock\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "d995d39014b8d6dd8f6ead04529d597c710ca360b89103fdce6436084c407a96"
+  },
+  {
+    "raw": "{\"action\":\"unlock\",\"command\":\"door_unlock\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "ada7c8549e6e310f9989bcfd7143659fbf86fad02b60ac4bd65ffaf123ff57ff"
+  },
+  {
+    "raw": "{\"action\":\"front_trunk\",\"command\":\"actuate_trunk\",\"payload\":\"{\\\"which_trunk\\\":\\\"front\\\"}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "a7a36bf273fee54d7b1f2ad9845698566d54ec7b32c8e087c16fcb9d19ba646a"
+  },
+  {
+    "raw": "{\"action\":\"rear_trunk\",\"command\":\"actuate_trunk\",\"payload\":\"{\\\"which_trunk\\\":\\\"rear\\\"}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "3339e60cdae549938f3b408fa767ba8b6f196fffcb9befc3fc59f558261b6ccb"
+  },
+  {
+    "raw": "{\"action\":\"flash_lights\",\"command\":\"flash_lights\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "e8f39c85627049c497eb3a1fda34030e094b7d2ac7ac801953c7c38018f873ce"
+  },
+  {
+    "raw": "{\"action\":\"honk_horn\",\"command\":\"honk_horn\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "599f9da8ab8dddf6991d19885d9769edebe549a45e8de9cae8c0573bfdf71f6f"
+  },
+  {
+    "raw": "{\"action\":\"set_zone_temperatures\",\"command\":\"set_temps\",\"payload\":\"{\\\"driver_temp\\\":15,\\\"passenger_temp\\\":15}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "26e0de96bb63fbe75f984b06bcb939dc99f7c186afbd6eacfa9c2c19b9ab4082"
+  },
+  {
+    "raw": "{\"action\":\"adjust_volume\",\"command\":\"adjust_volume\",\"payload\":\"{\\\"volume\\\":0}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "94acc2b88545518fa8c99f694bb345467d1bef16ae162b75fe032e9046509e35"
+  },
+  {
+    "raw": "{\"action\":\"media_next_fav\",\"command\":\"media_next_fav\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "aceb8fa12aa343669e7de58904513ab9beafd5106974d2c6343cc3f56a0c4ca1"
+  },
+  {
+    "raw": "{\"action\":\"media_prev_fav\",\"command\":\"media_prev_fav\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "9d1ac494626d135113933f06dcb2cdf18af20bd3600d0151db2b08bf3101c3e8"
+  },
+  {
+    "raw": "{\"action\":\"media_next_track\",\"command\":\"media_next_track\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "83c37d5367def9fe76b02bc7645a980b3a60f446b74902eb47a6c07cce69bafe"
+  },
+  {
+    "raw": "{\"action\":\"media_prev_track\",\"command\":\"media_prev_track\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "bf62325bbfe162112200ac8e866b6622f8c828b98ebe319bfd27a68d9eed2ac4"
+  },
+  {
+    "raw": "{\"action\":\"media_volume_down\",\"command\":\"media_volume_down\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "1d4f9b0ba22451beb0d5561b376896e69a56231547956338a0e348edd9ca012e"
+  },
+  {
+    "raw": "{\"action\":\"media_volume_up\",\"command\":\"media_volume_up\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "e7dd32d2754aad43c5354f30b4e4dc3e18c215ebb912484d5c3416a3453c851d"
+  },
+  {
+    "raw": "{\"action\":\"media_toggle_playback\",\"command\":\"media_toggle_playback\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "f92191b608829d23344315256c6cc5b61009ee0f5faa925bfa92e8c17b423a98"
+  },
+  {
+    "raw": "{\"action\":\"seat_heat\",\"command\":\"remote_seat_heater_request\",\"payload\":\"{\\\"level\\\":0,\\\"seat_position\\\":0}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "3c42c1d8769461d51f5abbf7ad658edca0bbbd6be2b932f2e04764c02e232090"
+  },
+  {
+    "raw": "{\"action\":\"seat_cool\",\"command\":\"remote_seat_cooler_request\",\"payload\":\"{\\\"seat_cooler_level\\\":1,\\\"seat_position\\\":1}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "385761f56086c9dda0ded5074efe473bdbdc459fefe96a0c2f266e80191636c8"
+  },
+  {
+    "raw": "{\"action\":\"seat_auto_climate\",\"command\":\"remote_auto_seat_climate_request\",\"payload\":\"{\\\"auto_climate_on\\\":true,\\\"auto_seat_position\\\":1}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "e409d28a0f4c8454d7bdb5ae0ce8923e6e34c86d6dcb87951394900ce131f5f7"
+  },
+  {
+    "raw": "{\"action\":\"steering_wheel_heat\",\"command\":\"remote_steering_wheel_heater_request\",\"payload\":\"{\\\"on\\\":true}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "fa08583d4a596324b242f4afd38ac4c5f6861e7a68bd6c476b353deda01c9923"
+  },
+  {
+    "raw": "{\"action\":\"bioweapon_mode\",\"command\":\"set_bioweapon_mode\",\"payload\":\"{\\\"manual_override\\\":true,\\\"on\\\":true}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "80f9e64eeaf0e91fac0618ef6b08350fc4bd159b75c887b8f81ca4f0fcb2cd44"
+  },
+  {
+    "raw": "{\"action\":\"cabin_overheat_protection\",\"command\":\"set_cabin_overheat_protection\",\"payload\":\"{\\\"fan_only\\\":true,\\\"on\\\":true}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "9de30645cdae2c4b400d97b8c5872e29294ac083e1a1c8c5c792f95289a7cefa"
+  },
+  {
+    "raw": "{\"action\":\"climate_keeper_mode\",\"command\":\"set_climate_keeper_mode\",\"payload\":\"{\\\"climate_keeper_mode\\\":0,\\\"manual_override\\\":true}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "08e0bdaed18dc52d7adca414842980b4a6d09038ff9be79fa35c0ceddd7082ae"
+  },
+  {
+    "raw": "{\"action\":\"cabin_overheat_temperature\",\"command\":\"set_cop_temp\",\"payload\":\"{\\\"cop_temp\\\":0}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "398f4cd9802d1a0b7bb31ac5db2385081569d2b70783eb2ad29b5346e5de5492"
+  },
+  {
+    "raw": "{\"action\":\"preconditioning_max\",\"command\":\"set_preconditioning_max\",\"payload\":\"{\\\"manual_override\\\":true,\\\"on\\\":true}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "07c6bc70856278ab5ecd2f4c18d6fa160ac96d32a94c54da9a41c59d56203990"
+  },
+  {
+    "raw": "{\"action\":\"charge_standard\",\"command\":\"charge_standard\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "6cf3b387dc0f0d03197fe1b0083b19bd1fe791bf6d829f50a3be3f56dbd68aad"
+  },
+  {
+    "raw": "{\"action\":\"charge_max_range\",\"command\":\"charge_max_range\",\"payload\":\"{}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "db7e95c17222ed814179d7b58676a36632212b23e1d4e27dc2ae35aa30d1f95c"
+  },
+  {
+    "raw": "{\"action\":\"add_charge_schedule\",\"command\":\"add_charge_schedule\",\"payload\":\"{\\\"days_of_week\\\":\\\"ALL\\\",\\\"enabled\\\":true,\\\"end_enabled\\\":true,\\\"end_time\\\":0,\\\"id\\\":1,\\\"lat\\\":-90,\\\"lon\\\":-180,\\\"one_time\\\":true,\\\"start_enabled\\\":true,\\\"start_time\\\":0}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "30d365a3d3a458f0d880501b2e20357dc43eaf732fea864bb6ba2cb705f20616"
+  },
+  {
+    "raw": "{\"action\":\"add_precondition_schedule\",\"command\":\"add_precondition_schedule\",\"payload\":\"{\\\"days_of_week\\\":\\\"ALL\\\",\\\"enabled\\\":true,\\\"id\\\":1,\\\"lat\\\":-90,\\\"lon\\\":-180,\\\"one_time\\\":true,\\\"precondition_time\\\":0}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "1c3286591554838873245f579369cdaae1e6bc8fbb38b7ca84e3161af6159946"
+  },
+  {
+    "raw": "{\"action\":\"remove_charge_schedule\",\"command\":\"remove_charge_schedule\",\"payload\":\"{\\\"id\\\":1}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "2bba24d54e8e044f4bad840309cd89b596268700ff3707e88b6a165a3d37d2f3"
+  },
+  {
+    "raw": "{\"action\":\"remove_precondition_schedule\",\"command\":\"remove_precondition_schedule\",\"payload\":\"{\\\"id\\\":1}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "268768000118f384a1f95d3fc2c9b45948df219af3ce5b45b62f2dd196a515c8"
+  },
+  {
+    "raw": "{\"action\":\"windows_vent\",\"command\":\"window_control\",\"payload\":\"{\\\"command\\\":\\\"vent\\\"}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "57a0c700ec0e24b37f2e04266adbc6284f27269e98b9d7772203b6fb867143f3"
+  },
+  {
+    "raw": "{\"action\":\"windows_close\",\"command\":\"window_control\",\"payload\":\"{\\\"command\\\":\\\"close\\\"}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "12a773b95dde7c60d250a959e11f9760d2877987a1abd32091bdbfb7df2843a8"
+  },
+  {
+    "raw": "{\"action\":\"vehicle_name\",\"command\":\"set_vehicle_name\",\"payload\":\"{\\\"vehicle_name\\\":\\\"Synthetic value\\\"}\",\"principal\":\"synthetic-owner\",\"target\":\"AAAAAAAAAAAAAAAAA\",\"version\":2}",
+    "binding": "a73f291146bcff80277a17165c0109575860cc2a4d6a1dbf532df504dbfbd8ed"
+  }
+]

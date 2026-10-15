@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "execution_enabled": false,
+  "pairing_diagnostic_enabled": false,
+  "infotainment_diagnostic_enabled": false,
+  "remote_owner_approval_enabled": false
+}

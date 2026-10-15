@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tesla-offline": {
+      "command": "python3",
+      "args": [
+        "-B",
+        "PROJECT_DIRECTORY/run_server.py"
+      ]
+    }
+  }
+}

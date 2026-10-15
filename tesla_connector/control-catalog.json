@@ -1,0 +1,759 @@
+{
+  "climate_start": {
+    "command": "auto_conditioning_start",
+    "scope": "vehicle_cmds",
+    "effect": "Start climate preconditioning",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "climate_stop": {
+    "command": "auto_conditioning_stop",
+    "scope": "vehicle_cmds",
+    "effect": "Stop climate preconditioning",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "set_temperature": {
+    "command": "set_temps",
+    "scope": "vehicle_cmds",
+    "effect": "Set driver and passenger temperature",
+    "domain": "INFO",
+    "properties": {
+      "celsius": {
+        "type": "number",
+        "minimum": 15,
+        "maximum": 28
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "vehicle_confirmed",
+    "sensitive_parameters": []
+  },
+  "charge_start": {
+    "command": "charge_start",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Start charging",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [
+      "cable"
+    ],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "charge_stop": {
+    "command": "charge_stop",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Stop charging",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "set_charge_limit": {
+    "command": "set_charge_limit",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Set charge percentage limit",
+    "domain": "INFO",
+    "properties": {
+      "percent": {
+        "type": "integer",
+        "minimum": 50,
+        "maximum": 100
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "set_charging_amps": {
+    "command": "set_charging_amps",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Set charging current",
+    "domain": "INFO",
+    "properties": {
+      "amps": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 48
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "charge_port_open": {
+    "command": "charge_port_door_open",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Open charge port",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": true,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "charge_port_close": {
+    "command": "charge_port_door_close",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Close charge port",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [
+      "motorized_port",
+      "cable_absent"
+    ],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "navigation_send": {
+    "command": "navigation_request",
+    "scope": "vehicle_cmds",
+    "effect": "Send destination to navigation",
+    "domain": "REST",
+    "properties": {
+      "destination": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 300,
+        "description": ""
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": [
+      "destination"
+    ]
+  },
+  "lock": {
+    "command": "door_lock",
+    "scope": "vehicle_cmds",
+    "effect": "Lock vehicle",
+    "domain": "SECURITY",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "unlock": {
+    "command": "door_unlock",
+    "scope": "vehicle_cmds",
+    "effect": "Unlock vehicle",
+    "domain": "SECURITY",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "front_trunk": {
+    "command": "actuate_trunk",
+    "scope": "vehicle_cmds",
+    "effect": "Actuate front trunk; do not assume powered closing",
+    "domain": "SECURITY",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "rear_trunk": {
+    "command": "actuate_trunk",
+    "scope": "vehicle_cmds",
+    "effect": "Actuate rear trunk; direction depends on hardware/state",
+    "domain": "SECURITY",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "flash_lights": {
+    "command": "flash_lights",
+    "scope": "vehicle_cmds",
+    "effect": "Briefly flash headlights",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": true,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "honk_horn": {
+    "command": "honk_horn",
+    "scope": "vehicle_cmds",
+    "effect": "Sound horn",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": true,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "set_zone_temperatures": {
+    "command": "set_temps",
+    "scope": "vehicle_cmds",
+    "effect": "Set driver and passenger zones independently",
+    "domain": "INFO",
+    "properties": {
+      "driver_temp": {
+        "type": "number",
+        "minimum": 15,
+        "maximum": 28
+      },
+      "passenger_temp": {
+        "type": "number",
+        "minimum": 15,
+        "maximum": 28
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "adjust_volume": {
+    "command": "adjust_volume",
+    "scope": "vehicle_cmds",
+    "effect": "Set media volume",
+    "domain": "INFO",
+    "properties": {
+      "volume": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10
+      }
+    },
+    "requires_park": false,
+    "required_facts": [
+      "user_present",
+      "mobile_access"
+    ],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "media_next_fav": {
+    "command": "media_next_fav",
+    "scope": "vehicle_cmds",
+    "effect": "Next favorite",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_prev_fav": {
+    "command": "media_prev_fav",
+    "scope": "vehicle_cmds",
+    "effect": "Previous favorite",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_next_track": {
+    "command": "media_next_track",
+    "scope": "vehicle_cmds",
+    "effect": "Next track",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_prev_track": {
+    "command": "media_prev_track",
+    "scope": "vehicle_cmds",
+    "effect": "Previous track",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_volume_down": {
+    "command": "media_volume_down",
+    "scope": "vehicle_cmds",
+    "effect": "Decrease volume one step",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_volume_up": {
+    "command": "media_volume_up",
+    "scope": "vehicle_cmds",
+    "effect": "Increase volume one step",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "media_toggle_playback": {
+    "command": "media_toggle_playback",
+    "scope": "vehicle_cmds",
+    "effect": "Toggle play/pause",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "implemented_unverified",
+    "sensitive_parameters": []
+  },
+  "seat_heat": {
+    "command": "remote_seat_heater_request",
+    "scope": "vehicle_cmds",
+    "effect": "Set seat heat",
+    "domain": "INFO",
+    "properties": {
+      "seat_position": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "description": "0 driver; 1 passenger; 2 rear left; 3 rear left back; 4 rear center; 5 rear right; 6 rear right back; 7/8 third row left/right. Requires fitted heater."
+      },
+      "level": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Off, low, medium, high"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [
+      "climate_active"
+    ],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "seat_cool": {
+    "command": "remote_seat_cooler_request",
+    "scope": "vehicle_cmds",
+    "effect": "Set front seat cooling",
+    "domain": "INFO",
+    "properties": {
+      "seat_position": {
+        "type": "integer",
+        "enum": [
+          1,
+          2
+        ],
+        "description": "1 front left; 2 front right, fitted ventilated seat required"
+      },
+      "seat_cooler_level": {
+        "type": "integer",
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "description": "SDK converts to levels 0–3; 1 off through 4 high"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [
+      "climate_active"
+    ],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "seat_auto_climate": {
+    "command": "remote_auto_seat_climate_request",
+    "scope": "vehicle_cmds",
+    "effect": "Enable or disable automatic front seat climate",
+    "domain": "INFO",
+    "properties": {
+      "auto_seat_position": {
+        "type": "integer",
+        "enum": [
+          1,
+          2
+        ],
+        "description": "1 front left; 2 front right"
+      },
+      "auto_climate_on": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [
+      "climate_active"
+    ],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "steering_wheel_heat": {
+    "command": "remote_steering_wheel_heater_request",
+    "scope": "vehicle_cmds",
+    "effect": "Enable or disable steering wheel heat",
+    "domain": "INFO",
+    "properties": {
+      "on": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [
+      "climate_active"
+    ],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "bioweapon_mode": {
+    "command": "set_bioweapon_mode",
+    "scope": "vehicle_cmds",
+    "effect": "Enable or disable Bioweapon Defense Mode if fitted",
+    "domain": "INFO",
+    "properties": {
+      "on": {
+        "type": "boolean"
+      },
+      "manual_override": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "cabin_overheat_protection": {
+    "command": "set_cabin_overheat_protection",
+    "scope": "vehicle_cmds",
+    "effect": "Set cabin overheat protection",
+    "domain": "INFO",
+    "properties": {
+      "on": {
+        "type": "boolean"
+      },
+      "fan_only": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "climate_keeper_mode": {
+    "command": "set_climate_keeper_mode",
+    "scope": "vehicle_cmds",
+    "effect": "Set climate keeper mode",
+    "domain": "INFO",
+    "properties": {
+      "climate_keeper_mode": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "0 off; 1 Keep; 2 Dog; 3 Camp"
+      },
+      "manual_override": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "cabin_overheat_temperature": {
+    "command": "set_cop_temp",
+    "scope": "vehicle_cmds",
+    "effect": "Set COP temperature level without activating COP",
+    "domain": "INFO",
+    "properties": {
+      "cop_temp": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "description": "Low 30°C/90°F; medium 35°C/95°F; high 40°C/100°F"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "preconditioning_max": {
+    "command": "set_preconditioning_max",
+    "scope": "vehicle_cmds",
+    "effect": "Set maximum preconditioning override",
+    "domain": "INFO",
+    "properties": {
+      "on": {
+        "type": "boolean"
+      },
+      "manual_override": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "charge_standard": {
+    "command": "charge_standard",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Set standard charge mode",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "charge_max_range": {
+    "command": "charge_max_range",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Set maximum range charge mode",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "add_charge_schedule": {
+    "command": "add_charge_schedule",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Add or modify a location-based charge schedule",
+    "domain": "INFO",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4294967295,
+        "description": "Exact schedule ID; no automatic ID substitution"
+      },
+      "lat": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90
+      },
+      "lon": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+      },
+      "days_of_week": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "description": "Comma-separated day names or ALL/WEEKDAYS",
+        "pattern": "^(ALL|WEEKDAYS|(MON|TUES|WED|THURS|FRI|SAT|SUN)(,(MON|TUES|WED|THURS|FRI|SAT|SUN))*)$"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "one_time": {
+        "type": "boolean"
+      },
+      "start_time": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1439,
+        "description": "Vehicle local minutes after midnight"
+      },
+      "end_time": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1439
+      },
+      "start_enabled": {
+        "type": "boolean"
+      },
+      "end_enabled": {
+        "type": "boolean"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": [
+      "lat",
+      "lon"
+    ]
+  },
+  "add_precondition_schedule": {
+    "command": "add_precondition_schedule",
+    "scope": "vehicle_cmds",
+    "effect": "Add or modify a location-based preconditioning schedule",
+    "domain": "INFO",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4294967295,
+        "description": "Exact schedule ID; no automatic ID substitution"
+      },
+      "lat": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90
+      },
+      "lon": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+      },
+      "days_of_week": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "description": "Comma-separated day names or ALL/WEEKDAYS",
+        "pattern": "^(ALL|WEEKDAYS|(MON|TUES|WED|THURS|FRI|SAT|SUN)(,(MON|TUES|WED|THURS|FRI|SAT|SUN))*)$"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "one_time": {
+        "type": "boolean"
+      },
+      "precondition_time": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1439,
+        "description": "Vehicle local minutes after midnight"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": [
+      "lat",
+      "lon"
+    ]
+  },
+  "remove_charge_schedule": {
+    "command": "remove_charge_schedule",
+    "scope": "vehicle_charging_cmds",
+    "effect": "Remove exact charge schedule",
+    "domain": "INFO",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4294967295,
+        "description": "Exact schedule ID; no automatic ID substitution"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "remove_precondition_schedule": {
+    "command": "remove_precondition_schedule",
+    "scope": "vehicle_cmds",
+    "effect": "Remove exact preconditioning schedule",
+    "domain": "INFO",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4294967295,
+        "description": "Exact schedule ID; no automatic ID substitution"
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": []
+  },
+  "windows_vent": {
+    "command": "window_control",
+    "scope": "vehicle_cmds",
+    "effect": "Vent windows",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": [],
+    "fixed_payload": {
+      "command": "vent"
+    }
+  },
+  "windows_close": {
+    "command": "window_control",
+    "scope": "vehicle_cmds",
+    "effect": "Close windows",
+    "domain": "INFO",
+    "properties": {},
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": [],
+    "fixed_payload": {
+      "command": "close"
+    }
+  },
+  "vehicle_name": {
+    "command": "set_vehicle_name",
+    "scope": "vehicle_cmds",
+    "effect": "Rename the vehicle (not supported in Guest Mode)",
+    "domain": "INFO",
+    "properties": {
+      "vehicle_name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "description": ""
+      }
+    },
+    "requires_park": false,
+    "required_facts": [],
+    "support": "hardware_or_firmware_unverified",
+    "sensitive_parameters": [
+      "vehicle_name"
+    ]
+  }
+}

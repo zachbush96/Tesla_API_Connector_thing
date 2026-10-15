@@ -1,0 +1,4 @@
+# Optional live/OIDC dependencies; the offline demo uses only Python's stdlib.
+# Reproducible baseline, not a review of current security advisories.
+PyJWT[crypto]==2.10.1
+cryptography==46.0.3

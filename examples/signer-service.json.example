@@ -1,0 +1,9 @@
+{
+  "owner": "configured-owner",
+  "target": "REPLACE_PRIVATELY_WITH_YOUR_VEHICLE",
+  "token_file": "/absolute/private/secrets/mcp.token",
+  "signing_private_file": "/absolute/private/secrets/signing-private.pem",
+  "signing_public_file": "/absolute/private/secrets/signing-public.pem",
+  "tls_certificate_file": "/absolute/private/secrets/signer-tls.crt",
+  "tls_private_file": "/absolute/private/secrets/signer-tls.key"
+}

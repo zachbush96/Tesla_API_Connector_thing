@@ -1,0 +1,11 @@
+{
+  "IDENTITY_BOUNDARY": "sites",
+  "OWNER_USER_ID": "REPLACE_VIA_PROTECTED_SETTINGS",
+  "BROKER_URL": "https://broker.example.invalid/mcp",
+  "REMOTE_CONTROL_MODE": "mock",
+  "required_secret_names": [
+    "BROKER_GATEWAY_TOKEN",
+    "ACCESS_CLIENT_ID",
+    "ACCESS_CLIENT_SECRET"
+  ]
+}
