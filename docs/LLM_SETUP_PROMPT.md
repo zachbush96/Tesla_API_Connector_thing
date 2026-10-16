@@ -4,7 +4,7 @@ Copy the following into your assistant. Keep credentials and vehicle details out
 
 > Help me set up the Tesla connector starter in my own new private installation. Read README.md and docs/SETUP.md, ARCHITECTURE.md, COMMANDS.md and TROUBLESHOOTING.md first. Inspect current source; do not assume the original private deployment or authorization exists on my computer. Use only my own app, domain, identity provider, vehicle, credentials and keys.
 >
-> Run scripts/offline_smoke.py and scripts/check_config.py first. Explain which parts are demos versus reference integration code. Keep mock mode. The remote review frontend, hosting package and tunnel policy are not bundled; plan them before suggesting live activation.
+> Run scripts/offline_smoke.py and scripts/check_config.py first. Explain the runnable mock demo and the complete source components that still require my private setup. Keep mock mode. The completed 43-action gateway and human review UI are included. Configure my own verified private hosting identity, origin, credentials, tunnel policy and platform project metadata before suggesting live activation.
 >
 > Consult the official Tesla onboarding, authentication, virtual-key and Vehicle Command SDK documentation linked in SETUP.md. Ask only for missing nonsecret choices such as OS, region, chosen domain and platform. Never ask me to paste tokens, secrets, private keys, callbacks, VIN or Keychain contents into chat, terminal arguments, reports or source. Guide hidden local entry and owner-controlled browser consent instead.
 >

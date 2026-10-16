@@ -11,7 +11,7 @@ assert set(load('examples/signer-service.json.example')) == SIGNER_FIELDS
 policy = load('examples/control-service.json.example')
 assert POLICY_FIELDS <= set(policy) <= POLICY_FIELDS | OPTIONAL_POLICY_FIELDS
 assert all(v is False for k,v in policy.items() if k != 'version')
-assert CATALOG == load('signer/control-catalog.json')
+assert CATALOG == load('signer/control-catalog.json') == load('gateway/control-catalog.json')
 gateway = load('examples/gateway-config.json.example')
 assert gateway['BROKER_URL'].endswith('.invalid/mcp') and gateway['REMOTE_CONTROL_MODE'] == 'mock'
 assert set(gateway['required_secret_names']) == {'BROKER_GATEWAY_TOKEN','ACCESS_CLIENT_ID','ACCESS_CLIENT_SECRET'}

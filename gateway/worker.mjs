@@ -23,7 +23,7 @@ function output(name, args) {
   for (const key of keys) {
     const p = tool.inputSchema.properties[key];
     if (p.type === 'string') {
-      if (typeof args[key] !== 'string' || args[key].length < p.minLength || args[key].length > p.maxLength || !args[key].trim() || /[\x00-\x1f\x7f]/u.test(args[key])) throw new Error();
+      if (typeof args[key] !== 'string' || Array.from(args[key]).length < p.minLength || Array.from(args[key]).length > p.maxLength || !args[key].trim() || /[\x00-\x1f\x7f]/u.test(args[key])) throw new Error();
     } else if (typeof args[key] !== 'number' || !Number.isFinite(args[key]) || args[key] < p.minimum || args[key] > p.maximum) throw new Error();
   }
   if (name === 'read_battery_charging') return {mode:'mock',battery_percent:72,charging_state:'Disconnected',charge_limit_percent:80,charger_power_kw:0};

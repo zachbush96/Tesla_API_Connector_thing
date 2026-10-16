@@ -35,7 +35,7 @@
     },
     "requires_park": false,
     "required_facts": [],
-    "support": "vehicle_confirmed",
+    "support": "implemented_unverified",
     "sensitive_parameters": []
   },
   "charge_start": {
@@ -387,7 +387,7 @@
           3,
           4
         ],
-        "description": "SDK converts to levels 0–3; 1 off through 4 high"
+        "description": "SDK converts to levels 0\u20133; 1 off through 4 high"
       }
     },
     "requires_park": false,
@@ -513,7 +513,7 @@
           1,
           2
         ],
-        "description": "Low 30°C/90°F; medium 35°C/95°F; high 40°C/100°F"
+        "description": "Low 30\u00b0C/90\u00b0F; medium 35\u00b0C/95\u00b0F; high 40\u00b0C/100\u00b0F"
       }
     },
     "requires_park": false,

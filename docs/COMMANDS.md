@@ -1,6 +1,6 @@
 # Command support and verification limits
 
-The fixed catalog has 43 actions. These are implemented schemas and routing rules, not a guarantee of support on a vehicle. The offline stdio demo exposes three reads and two previews. It does not execute the catalog. The Python reference workflow adds 43 typed prepare tools, prepare_control and execute_control after explicit composition; human approval is separate. The supplied gateway is the earlier sixteen-action MOCK reference and explicitly refuses live mode. A live 43-action gateway requires schema, receipt and budget-filter integration.
+The fixed catalog has 43 actions. These are implemented schemas and routing rules, not a guarantee of support on a vehicle. The offline stdio demo exposes three reads and two previews. It does not execute the catalog. The Python reference workflow adds 43 typed prepare tools, prepare_control and execute_control after explicit composition; human approval is separate. The supplied gateway uses the matching 43-action catalog, filters current receipt/budget contracts and provides exact human review links. The included UI arms one operation without sending a vehicle command.
 
 All actions remain unverified on a new owner installation. Historical temperature verification does not transfer to this export. A catalog support field does not mean verified vehicle execution.
 
@@ -8,7 +8,7 @@ All actions remain unverified on a new owner installation. Historical temperatur
 | --- | --- | --- | --- |
 | climate_start | auto_conditioning_start | vehicle_cmds | standard authorization/signing; implemented_unverified |
 | climate_stop | auto_conditioning_stop | vehicle_cmds | standard authorization/signing; implemented_unverified |
-| set_temperature | set_temps | vehicle_cmds | standard authorization/signing; vehicle_confirmed |
+| set_temperature | set_temps | vehicle_cmds | standard authorization/signing; implemented_unverified |
 | charge_start | charge_start | vehicle_charging_cmds | cable; implemented_unverified |
 | charge_stop | charge_stop | vehicle_charging_cmds | standard authorization/signing; implemented_unverified |
 | set_charge_limit | set_charge_limit | vehicle_charging_cmds | standard authorization/signing; implemented_unverified |
@@ -52,8 +52,8 @@ All actions remain unverified on a new owner installation. Historical temperatur
 
 Parameter bounds, payloads and redaction rules live in tesla_connector/control-catalog.json; the signer carries the same catalog. Temperature sets both zones (15–28°C) without implicitly starting HVAC. Navigation sends the exact private destination, redacted from model previews. Trunk actuation does not promise powered closing. Charging/charge-port actions have state/hardware requirements. Park checks are command-specific.
 
-Excluded: remote driving/drive start, PIN/security resets, key management, purchases, erasure, software installation, automatic wake/retry, raw endpoint passthrough and verification polling. Native preview, automatic login/deployment jobs and the browser frontend are not bundled.
+Excluded: remote driving/drive start, PIN/security resets, key management, purchases, erasure, software installation, automatic wake/retry, raw endpoint passthrough and verification polling. Native preview and automatic login/deployment jobs are not bundled; the completed browser review frontend is included.
 
-The earlier CommandAdapter and broader staged/live adapters have different roles; StagedControlAdapter remains production-disabled. Importing a live class or installing the SDK does not activate it. Remote owner approval additionally needs the independent human UI described in ARCHITECTURE.md.
+The earlier CommandAdapter and broader staged/live adapters have different roles; StagedControlAdapter remains production-disabled. Importing a live class or installing the SDK does not activate it. Remote owner approval uses the included human UI after you provision a verified private owner identity boundary.
 
 Offline tests cannot prove Tesla acceptance, pairing, current pricing, region compatibility, hardware fit or physical effects.

@@ -10,7 +10,7 @@
                                                        v
                                                   Fleet API -> vehicle
 
-The runnable stdio demo stops at synthetic reads/previews. Live arrows describe the reference components after a new owner composes them; this repository creates no hosted service or trusted human review UI.
+The runnable stdio demo stops at synthetic reads/previews. Live arrows describe the reference components after a new owner composes them; this repository supplies the complete human review UI, but creates no hosted service or owner identity boundary.
 
 * service.py filters three read endpoints, bounds responses, refuses redirects and never wakes/retries. Coarse location remains sensitive. Config defaults to mock.
 * oauth.py, oidc.py and oauth_transport.py bind state/session/nonce, validate signed identity and protect rotating refresh state. No tokens or upstream exceptions belong in model output. Keychain service tesla-connector-fleet isolates this export from other installations. Other operating systems need a secure backend, not plaintext token export.
@@ -22,6 +22,10 @@ The runnable stdio demo stops at synthetic reads/previews. Live arrows describe 
 
 Keep public-key hosting, owner browser access and machine MCP ingress separate. A public key is not a private key; a tunnel credential is not Tesla consent. The Site audience must remain owner-private even though this source is public.
 
-The original browser review frontend is not bundled. Before enabling remote approval, implement a frontend that independently authenticates the human, safely displays the exact review and protects approval POSTs against CSRF/replay. Never expose browser_approve_control to the model or let an LLM click Approve for the owner. OperatorConsole and OwnerControlWorkflow illustrate local review but are not a drop-in frontend for RemoteOperations.
+The included approval.mjs is the human browser review boundary: it verifies the platform-authenticated owner, requires a same-origin browser POST and an expiring HMAC-bound HttpOnly cookie, retrieves the exact proposal from the protected broker, and arms only that single operation. It safely renders effect/parameters with textContent and displays the spending ceiling and motorized-port confirmation when applicable. The broker consumes approvals once and enforces the expiry independently.
 
-The inspected Site source retains the older sixteen-action gateway contract. The public adapter rejects live mode rather than forwarding mismatched schemas or old receipt estimates. A live gateway and human review frontend remain new-owner integration work.
+Never expose the owner/control/review or owner/control/approve machine routes as MCP tools or let an LLM click Approve for the owner. The gateway-only machine capability must stay server-side. Platform identity must be validated before forwarding its authenticated-user header.
+
+gateway/index.mjs composes the setup page, restricted browser-discovery bridge, owner approval UI and MCP forwarding. GATEWAY_PUBLIC_ORIGIN sets the trusted review origin and public approval links; BROKER_URL sets the separately protected machine endpoint. Neither is taken from a caller-controlled Host header. Both defaults are nonfunctional .invalid examples.
+
+The recovered completed source supports the same 43-action catalog as Python, including current budget estimates, receipt evidence, navigation redaction and exact owner review. Catalog metadata remains unverified for a new installation. Signed application success, SECURITY acknowledgement, Fleet sharing success and independently observed resulting state are distinct.

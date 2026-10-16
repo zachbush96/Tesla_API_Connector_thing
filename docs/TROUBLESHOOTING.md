@@ -13,7 +13,7 @@ The reusable development sequence was synthetic read/preview MCP, strict broker/
 | TLS works in one tool but fails in Go | Verify named-curve encoding, loopback IP SAN, matching TLS pair and certificate trust with your own keys. Never disable TLS verification. |
 | Gateway sees 401/403 or wrong mode | Check distinct machine capability, verified owner identity, Access routing policy and consistent mock/live modes. Authentication remains separate from approval. |
 | Worker invocation error | Preserve the runtime fetch receiver using an arrow wrapper around globalThis.fetch. Return fixed diagnostic categories, not exceptions. |
-| Discovery works but chat has no tools | Discovery and actual tool invocation are different checks. Refresh the installed plugin connection and inspect schemas/protocol version. A setup page does not verify the vehicle. The prior browser frontend is excluded. |
+| Discovery works but chat has no tools | Discovery and actual tool invocation are different checks. Refresh the installed plugin connection and inspect schemas/protocol version. A setup page does not verify the vehicle. The included browser-discovery bridge carries the completed repair. |
 | Typed tool exists but vehicle rejects it | Schema implementation is not hardware/firmware support. Consult prerequisites and label support unverified until a separately authorized test. |
 | Command accepted | Report accepted only. Require owner observation or a separately approved bounded read before claiming a physical effect. |
 

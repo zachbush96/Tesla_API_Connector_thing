@@ -39,7 +39,7 @@ This explicitly opens consent and exchanges an OAuth code; it does not issue a v
 
 The --setup option omits refresh permission. --setup-controls requests command/charging scopes and refresh permission; --setup-location additionally requests location. Review those permissions first. Reuse valid saved authorization instead of repeating consent unnecessarily. Tokens stay in your new Keychain namespace; only your own VIN goes into your private state directory.
 
-A hosted callback requires a protected owner browser session. The public export does not provision that hosting/session frontend.
+A hosted callback requires a protected owner browser session. The public export includes the owner review and setup frontends, but does not provision hosting or platform identity.
 
 ## 5. Compose a private installation before live testing
 
@@ -62,11 +62,11 @@ Generate a separate TLS key/certificate for loopback IP 127.0.0.1, distinct from
 
 The restricted LIVE signer pins North America. EU/CN read configuration exists; live commands there require a reviewed signer adaptation.
 
-Deploy gateway/sites-gateway.mjs only behind a platform that supplies verified Sites owner identity. Configure BROKER_URL, OWNER_USER_ID, IDENTITY_BOUNDARY=sites, BROKER_GATEWAY_TOKEN, ACCESS_CLIENT_ID and ACCESS_CLIENT_SECRET through protected platform settings. BROKER_URL must be your HTTPS /mcp endpoint. This public gateway is MOCK ONLY and refuses REMOTE_CONTROL_MODE=live: the inspected Site source retains earlier sixteen-action schemas and receipt estimates. Adapt and review it against the Python 43-action catalog and current receipt/budget contract before a live deployment. Keep the Site audience private. The example contains secret NAMES only. A generic public Worker trusting arbitrary identity headers is unsafe.
+Deploy the complete gateway/index.mjs entry (or its built dist/gateway.mjs) only behind a platform that supplies verified Sites owner identity. Configure BROKER_URL, OWNER_USER_ID, IDENTITY_BOUNDARY=sites, BROKER_GATEWAY_TOKEN, ACCESS_CLIENT_ID and ACCESS_CLIENT_SECRET through protected platform settings. BROKER_URL must be your HTTPS /mcp endpoint. The completed public gateway supports the Python 43-action catalog and matching receipts. REMOTE_CONTROL_MODE defaults to mock; set live only after completing your own protected installation and setting matching broker/signer modes. Set GATEWAY_PUBLIC_ORIGIN to your exact canonical HTTPS Site origin, without a trailing slash; approval URLs and browser origin checks use it. REMOTE_OWNER_APPROVAL=enabled additionally enables the included exact review/approve UI, while the protected broker policy must independently enable remote_owner_approval_enabled. These settings alone do not grant consent, pair a key or fund an allowance. Keep the Site audience private. The example contains secret NAMES only. A generic public Worker trusting arbitrary identity headers is unsafe.
 
 Provision your own protected tunnel/service identity. Route /mcp to loopback 8765 with machine authentication and validated origin protection. CF-Access-Client-* headers require your own Access policy; Python does not validate Access JWTs itself. Put a verified Access boundary or equivalent in front of it and prevent bypass. The internal signer callbacks must never be public. The signer listens on loopback 8766 with TLS and its own capability.
 
-Before remote human approval, supply an independent authenticated browser review UI with exact safe rendering and CSRF/replay protection; it is not bundled. Review ARCHITECTURE.md. Never expose the human approval capability to the model.
+The included gateway/approval.mjs supplies the exact review UI, same-origin/CSRF checks, expiring owner-bound cookie and broker approval bridge. Publish gateway/index.mjs through a platform with the verified Sites identity boundary, or run node scripts/build_gateway.mjs for a self-contained dist/gateway.mjs. Supply your own platform project metadata; the prior private project ID is excluded. Never bypass the identity boundary or expose the human approval capability to the model. Review ARCHITECTURE.md.
 
 After consent, pairing, trust boundaries, budget and command-specific prerequisites are checked, authorize ONE exact bounded live test. The model may prepare; the owner independently approves. Execute within expiry. Request acceptance is not physical verification. An uncertain result ends the test and requires private reconciliation before any new approval. This release has not verified a new live installation.
 
@@ -80,3 +80,15 @@ After consent, pairing, trust boundaries, budget and command-specific prerequisi
 * [Official Vehicle Command SDK, proxy and signing](https://github.com/teslamotors/vehicle-command)
 
 Recheck current Tesla documentation and account requirements before live setup.
+
+## Gateway publishing and use
+
+1. Run node scripts/build_gateway.mjs locally. This builds only; it performs no deployment or network request.
+2. Create/configure your own private Site through its supported workflow and load dist/gateway.mjs as its Worker entry. Use your own hosting metadata and project ID; none is bundled.
+3. Set the protected credentials and nonsecret settings above. Keep approval UI and MCP behind the private owner audience. A generic Cloudflare Worker that accepts spoofable Sites headers is not an equivalent deployment.
+4. With mock mode, verify discovery and proposals first. Browser setup diagnostics never contact the vehicle. The browser discovery bridge accepts only discovery, listing and check_setup.
+5. After your own consent, pairing, allowance and physical-service prerequisites are complete and explicitly authorized, align live modes and enable remote owner approval on BOTH sides.
+6. Ask the connector to prepare an exact action. Open its approval_url yourself. Review the exact parameters and maximum retained gross cost, then click Approve. This arms one short-lived grant; it sends no command.
+7. Return to chat and ask it to execute that operation within 120 seconds. Do not ask the model to open/click the owner approval page. Keep acceptance/vehicle-reported success distinct from resulting-state verification.
+
+The source is runnable with the documented private dependencies/settings, but this export has not deployed or live-tested a different owner's installation. You must obtain your own Tesla and platform authorizations.

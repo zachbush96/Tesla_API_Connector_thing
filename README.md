@@ -12,14 +12,14 @@ Requirements: Python 3.11+; Node 20+ for gateway examples; Go according to signe
     python3 -B run_server.py < examples/demo.txt
     python3 -B scripts/check_config.py
 
-The stdio entry point always uses mock data, even if live-read environment variables exist. It exposes three filtered reads and two previews. A preview validates a request and never sends it. The Python reference broker exposes a broader workflow when explicitly composed. The exported gateway is the earlier sixteen-action mock adapter and refuses live mode; see command support for this integration limit.
+The stdio entry point always uses mock data, even if live-read environment variables exist. It exposes three filtered reads and two previews. A preview validates a request and never sends it. The Python reference broker exposes a broader workflow when explicitly composed. The gateway exposes the same 43 typed proposals and includes the owner browser review/approval UI. Mock mode remains the default; live mode requires your own completed private installation.
 
 ## Contents
 
 | Path | Purpose |
 | --- | --- |
 | tesla_connector/ | Filtered reads, command schemas, OAuth/OIDC, macOS Keychain, durable budgets and single-use approval journals, loopback broker, signer bridge |
-| gateway/ | ESM MCP validation and forwarding adapter; requires a verified Sites identity boundary |
+| gateway/ | Complete ESM gateway, 43-action schemas, browser setup and exact human approval UI; requires a verified Sites identity boundary |
 | signer/ | Restricted Go wrapper around a pinned official Tesla Vehicle Command SDK; default mock and explicitly enabled live entry points |
 | scripts/ | Offline checks and fresh local credential preparation |
 | tests/ | Synthetic Python coverage; signer includes Go tests and cross-language bindings |
@@ -30,7 +30,7 @@ Read [setup](docs/SETUP.md), [architecture](docs/ARCHITECTURE.md), [command supp
 
 ## Limits and provenance
 
-This export comes from the current source of a private prototype, with fresh history and generic configuration. Its deployment state, identities, tunnel, browser review frontend, automatic login jobs, native preview helper, platform packaging and raw verification reports are excluded. This is source for a new installation, not a portable authorization to an existing one.
+This export comes from the current source of a private prototype, with fresh history and generic configuration. Its deployment state, identities, tunnel credentials, automatic login jobs, native preview helper, owner-specific platform project metadata and raw verification reports are excluded. This is source for a new installation, not a portable authorization to an existing one.
 
 The original integration exercised one signed temperature command end to end. That is historical implementation context, **not verification of this export or every command**. The expanded 43-action catalog describes implemented schemas and prerequisites; most individual vehicle effects and hardware/firmware combinations remain unverified. Publication used offline checks only.
 
@@ -41,7 +41,10 @@ No license has been selected for original project code. Public visibility alone 
 ## Offline verification
 
     python3 -B scripts/run_offline_tests.py
+    node scripts/build_gateway.mjs
     node scripts/gateway_smoke.mjs
     cd signer && go test ./...
 
 Python unit tests deny outbound socket connections. Gateway tests use injected fake fetch and forbid external network. Go tests use synthetic vehicle/credential fixtures and mocked Fleet transports; one test opens a local loopback HTTP listener. Dependency downloads may be needed before Go tests. Legacy SDK behavior cases cover the original sixteen actions; generated canonical-binding fixtures validate all 43 action schemas across Python and Go. These checks do not verify any new owner's vehicle or live hosting.
+
+The gateway source and owner review UI come from the completed command-expansion implementation, including its navigation review and browser-discovery fixes. Run node scripts/build_gateway.mjs to produce ignored dist/gateway.mjs for your own platform. gateway/index.mjs is the equivalent multi-module entry point. Supply your own platform project metadata; no existing Site is embedded.
